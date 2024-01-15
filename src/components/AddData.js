@@ -1,15 +1,24 @@
 import React, { useState } from 'react';
 
+
 const AddData = (props) => {
     const [id,setId]=useState('');
     const [dish,setDish]=useState('');
     const [price,setPrice]=useState('');
     const [table,setTable]=useState('');
 
-
+    let inputData={
+        ID:id,
+        Dish:dish,
+        Price:price,
+        TableNo:table,
+    }
     const addDataHandler=(event)=>{
         event.preventDefault();
-        console.log(id,dish,price,table)
+        // console.log(id,dish,price,table)
+        // console.log(inputData)
+        localStorage.setItem(id,JSON.stringify(inputData))
+
     }
     const idChangeHandler=(event)=>{
         setId(event.target.value)
