@@ -16,8 +16,11 @@ const AddData = (props) => {
     const addDataHandler=(event)=>{
         event.preventDefault();
         // console.log(id,dish,price,table)
-        // console.log(inputData)
+        // console.log(inputData)c
         localStorage.setItem(id,JSON.stringify(inputData))
+        console.log(inputData.TableNo)
+        props.onAddUser(id,dish,price,table)
+        // if(nputData.TableNo == "table1")
 
     }
     const idChangeHandler=(event)=>{
